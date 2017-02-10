@@ -40,6 +40,47 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+        <h3>Days present per month</h3>
+             <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Jan</th>
+                    <th>Feb</th>
+                    <th>Mar</th>
+                    <th>April</th>
+                    <th>May</th>
+                    <th>June</th>
+                    <th>July</th>
+                    <th>august</th>
+                    <th>sept</th>
+                    <th>Oct</th>
+                    <th>Nov</th>
+                    <th>Dec</th>
+                    <th>Total</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>{{ $employee->jan }}</th>
+                    <th>{{ $employee->feb }}</th>
+                    <th>{{ $employee->march }}</th>
+                    <th>{{ $employee->april }}</th>
+                    <th>{{ $employee->may }}</th>
+                    <th>{{ $employee->june }}</th>
+                    <th>{{ $employee->july }}</th>
+                    <th>{{ $employee->august }}</th>
+                    <th>{{ $employee->september }}</th>
+                    <th>{{ $employee->october }}</th>
+                    <th>{{ $employee->november}}</th>
+                    <th>{{ $employee->december }}</th>
+                    <th>{{ $employee->days_present }}</th>
+                </tr>
+            </tbody>
+            
+        </table>
+        </div>
         <script type="text/javascript" src="{{ URL::to('js/app.js') }}"></script>
     </body>
 </html>

@@ -21,6 +21,21 @@ class CreateEmployeesTable extends Migration
             $table->integer('days_present')->default('0')->nullable();
             $table->integer('days_early')->default('0')->nullable();
             $table->integer('days_late')->default('0')->nullable();
+            $table->integer('jan')->default('0')->nullable();
+            $table->integer('feb')->default('0')->nullable();
+            $table->integer('march')->default('0')->nullable();
+            $table->integer('april')->default('0')->nullable();
+            $table->integer('may')->default('0')->nullable();
+            $table->integer('june')->default('0')->nullable();
+            $table->integer('july')->default('0')->nullable();
+            $table->integer('august')->default('0')->nullable();
+            $table->integer('september')->default('0')->nullable();
+            $table->integer('october')->default('0')->nullable();
+            $table->integer('november')->default('0')->nullable();
+            $table->integer('december')->default('0')->nullable();
+
+
+
             $table->string('date')->default("")->nullable();
             $table->timestamps();
         });
