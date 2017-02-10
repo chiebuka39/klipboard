@@ -45,6 +45,7 @@
              <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>   </th>
                     <th>Jan</th>
                     <th>Feb</th>
                     <th>Mar</th>
@@ -63,6 +64,24 @@
             </thead>
             <tbody>
                 <tr>
+                    <th>Percentage present</th>
+                    <th>{{ round(($employee->jan/31)*100, 1) }} % present</th>
+                    <th>{{ round(($employee->feb/29)*100, 1) }} % </th>
+                    <th>{{ round(($employee->march/31)*100, 1) }} % </th>
+                    <th>{{ round(($employee->april/30)*100, 1) }} % </th>
+                    <th>{{ round(($employee->may/31)*100, 1) }} % </th>
+                    <th>{{ round(($employee->june/30)*100, 1) }} % </th>
+                    <th>{{ round(($employee->july/31)*100, 1) }} % </th>
+                    <th>{{ round(($employee->august/31)*100, 1) }} % </th>
+                    <th>{{ round(($employee->september/30)*100, 1) }} % </th>
+                    <th>{{ round(($employee->october/31)*100, 1) }} % </th>
+                    <th>{{ round(($employee->november/30)*100, 1) }} % </th>
+                    <th>{{ round(($employee->december/31)*100, 1) }} % </th>
+                    <th>{{round(($employee->days_present/54)*100, 1)}} %</th>
+                </tr>
+
+                <tr>
+                    <th>Days Present</th>
                     <th>{{ $employee->jan }}</th>
                     <th>{{ $employee->feb }}</th>
                     <th>{{ $employee->march }}</th>
