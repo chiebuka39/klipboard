@@ -7,7 +7,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand brand" href="route('home')">KlipBoard</a>
+                    <a class="navbar-brand brand" href="{{route('home')}}">KlipBoard</a>
                 </div>
                 <div class="collapse navbar-collapse" id="the-menu">
                     <ul class="nav navbar-nav navbar-right">
