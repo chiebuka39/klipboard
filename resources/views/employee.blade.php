@@ -77,7 +77,7 @@
                     <th>{{ round(($employee->october/31)*100, 1) }} % </th>
                     <th>{{ round(($employee->november/30)*100, 1) }} % </th>
                     <th>{{ round(($employee->december/31)*100, 1) }} % </th>
-                    <th>{{round(($employee->days_present/54)*100, 1)}} %</th>
+                    <th>{{round(($employee->days_present/365)*100, 1)}} %</th>
                 </tr>
 
                 <tr>
@@ -96,6 +96,41 @@
                     <th>{{ $employee->december }}</th>
                     <th>{{ $employee->days_present }}</th>
                 </tr>
+
+                <tr>
+                    <th>% Days Early</th>
+                    <th>{{ round(($early->jan/$employee->days_present)*100, 1) }} % present</th>
+                    <th>{{ round(($early->feb/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->march/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->april/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->may/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->june/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->july/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->august/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->september/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->october/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->november/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{ round(($early->december/$employee->days_present)*100, 1) }} % </th>
+                    <th>{{round(($employee->days_early/$employee->days_present)*100, 1)}} %</th>
+                </tr>
+                <tr>
+                    <th>% Days late</th>
+                    <th>{{ (100 - (round(($early->jan/$employee->days_present)*100, 1))) }} %</th>
+                    <th>{{ (100 - (round(($early->feb/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->march/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->april/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->may/$employee->days_present)*100, 1))) }} %</th>
+                    <th>{{ (100 - (round(($early->june/$employee->days_present)*100, 1))) }} %</th>
+                    <th>{{ (100 - (round(($early->july/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->august/$employee->days_present)*100, 1))) }} %% </th>
+                    <th>{{ (100 - (round(($early->september/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->october/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{ (100 - (round(($early->november/$employee->days_present)*100, 1))) }} %</th>
+                    <th>{{ (100 - (round(($early->december/$employee->days_present)*100, 1))) }} % </th>
+                    <th>{{round(($employee->days_late/$employee->days_present)*100, 1)}} %</th>
+                    <th></th>
+                </tr>
+
             </tbody>
             
         </table>

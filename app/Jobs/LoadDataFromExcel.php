@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Employee;
+use App\EarlyDays;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -38,6 +39,10 @@ class LoadDataFromExcel implements ShouldQueue
                     'email' => $row->email,
                     'staff_id' => $row->staff_id
                 ]);
+
+                $early = EarlyDays::firstOrCreate([
+                    'email' => $row->email,
+                ]);
                 
                 
                 if($row->date != $employee->date){
@@ -48,46 +53,86 @@ class LoadDataFromExcel implements ShouldQueue
                         $employee->days_late = $employee->days_late + 1;
                     }
                     $month = explode("-", $row->date);
-                    
+                                        
                     switch ($month[1]) {
                         case '01':
                             $employee->jan = $employee->jan + 1;
+                            
+                            if(substr($row->time, 0,2) < 8){
+                                $early->jan = $early->jan + 1;
+                            }
                             break;
                         case '02':
                             $employee->feb = $employee->feb + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->feb = $early->feb + 1;
+                            }
                             break;
                         case '03':
                             $employee->march = $employee->march + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->march = $early->march + 1;
+                            }
                             break;
                         case '04':
                             $employee->april = $employee->april + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->april = $early->april + 1;
+                            }
                             break;
                         case '05':
                             $employee->may = $employee->may + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->may = $early->may + 1;
+                            }
                             break;
                         case '06':
                             $employee->june = $employee->june + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->june = $early->june + 1;
+                            }
                             break;
                         case '07':
                             $employee->july = $employee->july + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->july = $early->july + 1;
+                            }
                             break;
                         case '08':
                             $employee->august = $employee->august + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->august = $early->august + 1;
+                            }
                             break;
                         case '09':
                             $employee->september = $employee->september + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->september = $early->september + 1;
+                            }
                             break;
                         case '10':
                             $employee->october = $employee->october + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->october = $early->october + 1;
+                            }
                             break;
                         case '11':
                             $employee->november = $employee->november + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->november = $early->november + 1;
+                            }
                             break;
                         case '12':
                             $employee->december = $employee->december + 1;
+                            if(substr($row->time, 0,2) < 8){
+                                $early->december = $early->december + 1;
+                            }
                             break;
                         default:
                              $employee->december = $employee->december + 1;
+                             if(substr($row->time, 0,2) < 8){
+                                $early->december = $early->december + 1;
+                            }
                             break;
                     }
 
@@ -95,6 +140,7 @@ class LoadDataFromExcel implements ShouldQueue
 
                 $employee->date = $row->date;
                 $employee->save();
+                $early->save();
 
 
             }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ShouldLoad;
 use App\Employee;
+use App\EarlyDays;
 use App\Jobs\LoadDataFromExcel;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,8 @@ class HomeController extends Controller
 
     public function single(Employee $employee)
     {
-    	return view('employee', compact('employee'));
+        $early = EarlyDays::find($employee->id);
+        //dd($early);
+    	return view('employee', compact('employee', 'early'));
     }
 }
