@@ -4,7 +4,7 @@
 
 ## steps for usage
 
-### run a git clone
-choose a correct database setting 
-run the migration
-and you are ready to go
+#### run a git clone
+#### choose a correct database setting 
+#### run the migration
+#### and you are ready to go
